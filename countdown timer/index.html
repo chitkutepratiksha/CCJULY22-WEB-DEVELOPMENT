@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>countdown 2023</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2> <span> Countdown to New Year</span>2023</h2>
+        
+    <div class="countdown">
+        <div id="days"></div>
+        <div id="hours"></div>
+        <div id="minutes"></div>
+        <div id="seconds"></div>
+    </div>
+    </div>
+<script type="text/javascript">
+    var countDate=new Date('jan 1,2023 00:00:00').getTime();
+    function newYear(){
+        var now=new Date().getTime();
+        gap=countDate-now;
+
+        var seconds=1000;
+        var minutes=seconds*60;
+        var hours=minutes*60;
+        var days=hours*24;
+
+        var d=Math.floor(gap / (days) );
+        var h=Math.floor((gap % (days)) / (hours));
+        var m=Math.floor((gap % (hours)) / (minutes));
+        var s=Math.floor((gap % (minutes)) / (seconds));
+
+
+        document.getElementById('days').innerText=d;
+        document.getElementById('hours').innerText=h;
+        document.getElementById('minutes').innerText=m;
+        document.getElementById('seconds').innerText=s;
+
+    }
+    setInterval(function(){
+        newYear();
+
+    },1000)
+</script>
+</body>
+</html>
